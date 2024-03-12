@@ -16,6 +16,7 @@ public:
         {
             return 1;
         }
+        return 0;
     }
 
     void enque(int value){
@@ -24,16 +25,19 @@ public:
        arr[back] = value; 
     }
     void deque(){
+        
         front += 1;
         arr[0] = arr[front + 1];
     }
     void display(){
-        cout << "First In";
+        if (isEmpty())
+        {
+            cout << "Queue Empty";
+        }
         for (int i = front+1; i <= back; i++)
         {
             cout << arr[i] << "\n";
         }
-        cout << "First Out";
     }
 };
 
@@ -45,7 +49,6 @@ int main()
     queue.enque(8);
     queue.enque(10);
     queue.enque(23);
-    queue.deque();
     queue.display();
 
     return 0;
