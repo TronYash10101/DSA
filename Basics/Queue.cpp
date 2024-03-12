@@ -28,11 +28,12 @@ public:
         arr[0] = arr[front + 1];
     }
     void display(){
+        cout << "First In";
         for (int i = front+1; i <= back; i++)
         {
             cout << arr[i] << "\n";
         }
-        
+        cout << "First Out";
     }
 };
 
@@ -44,7 +45,7 @@ int main()
     queue.enque(8);
     queue.enque(10);
     queue.enque(23);
-    // queue.deque();
+    queue.deque();
     queue.display();
 
     return 0;
