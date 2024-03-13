@@ -17,27 +17,27 @@ public:
         this->arr = new int[max_size];
     }
 
-    
+    bool isFull() {
+        return (front + 1) % max_size == back;
+    }
 
-    int enque(int value)
+    void enque(int value)
     {
-        if ((front + 1) % max_size == back)
-        {
-            return -1;
+       if (isFull()) {
+            cout << "Queue is full. Cannot enqueue element.\n";
+            return;
         }
         arr[front] = value;
-        front += 1;
+        front = (front + 1) % max_size;
     }
 
     void display(){
-        // if (isEmpty())
-        // {
-        //     cout << "Queue Empty";
-        // }
-        for (int i = 0; i < front; i++)
+        
+        for (int i = 0; i < max_size; i++)
         {
             cout << arr[i] << "\n";
         }
+            cout << front;
     }
 };
 
@@ -48,9 +48,12 @@ int main()
     obj.enque(10);
     obj.enque(60);
     obj.enque(50);
-    obj.enque(70);
     obj.enque(90);
+    obj.enque(70);
+    // cout<< obj.arr[];
     obj.display();
+
+
     
     return 0;
 }
