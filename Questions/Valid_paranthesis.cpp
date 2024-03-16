@@ -37,7 +37,7 @@ public:
 int main()
 {
     Solution obj;
-    string s = "[";
+    string s = "[]";
 
     cout << obj.isValid(s);
 
